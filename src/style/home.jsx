@@ -163,7 +163,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
 
-  .css-dev-only-do-not-override-vryruh.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item:hover{
+  :where(.css-vryruh).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item .ant-dropdown-menu-item:hover{
     border-radius: 0;
     background-color: ${({ theme }) => theme.body};
   }
