@@ -162,15 +162,13 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
   }
 
-  
-  :where(.css-dev-only-do-not-override-vryruh).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item{
-  }
-  :where(.css-dev-only-do-not-override-vryruh).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item:hover{
+
+  .css-dev-only-do-not-override-vryruh.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item:hover{
     border-radius: 0;
     background-color: ${({ theme }) => theme.body};
   }
 
-  :where(.css-dev-only-do-not-override-vryruh).ant-dropdown .ant-dropdown-menu{
+  .css-dev-only-do-not-override-vryruh.ant-dropdown .ant-dropdown-menu{
     border-radius: 0;
     background-color: ${({ theme }) => theme.containerBg};
   }
