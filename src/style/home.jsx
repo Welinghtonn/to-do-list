@@ -168,7 +168,7 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.body};
   }
 
-  .css-vryruh{
+  :where(.css-vryruh).ant-dropdown .ant-dropdown-menu, :where(.css-vryruh).ant-dropdown-menu-submenu .ant-dropdown-menu{
     border-radius: 0;
     background-color: ${({ theme }) => theme.containerBg};
   }
