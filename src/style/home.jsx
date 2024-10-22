@@ -415,8 +415,10 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.body};
     
     
+    
     border: solid 2px ${({ theme }) => theme.border};
     cursor: pointer;
+    border: solid 2px ${({ theme }) => theme.border};
   }
 
   .content-modal button {
