@@ -149,7 +149,41 @@ const Home = () => {
             <div className="top">
                 <p className='Title'>To Do List</p>
                 <div className="container">
+                    <div className="pop-up">
+                        <Popup
+                            trigger={<button className="button"><IoAddSharp />Adicionar Task</button>}
+                            modal
+                            nested
+                        >
+                            {close => (
+                                <div className="modal">
+                                    <div className="headerClose">
+                                        <button className="close" onClick={close}>
+                                            &times;
+                                        </button>
+                                    </div>
+                                    <div className="header">Create tasks</div>
+                                    <div className="content-modal">
+                                        <div className="container-add">
+                                            <input value={input} onChange={handleChange} placeholder='Create Task...' type="text" />
+                                        </div>
+
+                                        <form action="">
+                                            <label htmlFor="">
+                                                <p>Data de conclusão</p>
+                                                <DesktopDatePicker inputDate={inputDate} setInputDate={setInputDate} />
+                                            </label>
+                                        </form>
+                                        <div className="containerAddTask">
+                                            <button onClick={addTask} className='addTask'><VscDiffAdded fontSize={20}/>Create</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                        </Popup>
+                    </div>
                     <div className="container-search">
+
                         <input value={search} onChange={onChangeValue} type="text" placeholder='Search Task...' />
                         <BiSearchAlt className='search' />
                     </div>
@@ -197,37 +231,7 @@ const Home = () => {
             </div>
 
             {/* Popup */}
-            <div className="pop-up">
-                <Popup
-                    trigger={<button className="button"><IoAddSharp /></button>}
-                    modal
-                    nested
-                >
-                    {close => (
-                        <div className="modal">
-                            <div className="headerClose">
-                                <button className="close" onClick={close}>
-                                    &times;
-                                </button>
-                            </div>
-                            <div className="header">Create tasks</div>
-                            <div className="content-modal">
-                                <div className="container-add">
-                                    <input value={input} onChange={handleChange} placeholder='Create Task...' type="text" />
-                                </div>
 
-                                <form action="">
-                                    <label htmlFor="">
-                                        <p>Data de conclusão</p>
-                                        <DesktopDatePicker inputDate={inputDate} setInputDate={setInputDate} />
-                                    </label>
-                                </form>
-                                <button onClick={addTask} className='addTask'>Create<VscDiffAdded /></button>
-                            </div>
-                        </div>
-                    )}
-                </Popup>
-            </div>
 
             {confirm && (
                 <Alert style={{ position: "absolute", top: "30px" }} variant="filled" severity="warning">
