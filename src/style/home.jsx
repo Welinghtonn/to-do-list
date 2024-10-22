@@ -57,8 +57,10 @@ export const GlobalStyles = createGlobalStyle`
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     flex-direction: column;
+
+    gap: 80px;
   }
 
   p {
@@ -222,7 +224,7 @@ export const GlobalStyles = createGlobalStyle`
     align-items: center;
     justify-content: center;
     gap: 6px;
-    width: 120px;
+    width: 130px;
     height: 30px;
     border: none;
     border: 1px solid ${({ theme }) => theme.border};
