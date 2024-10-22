@@ -1,13 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
 export const lightTheme = {
-  body: "#fbffcd",
+  body: "#ffffff",
   text: "#001F36",
-  button: "#ffffff",
-  border: "#fff",
+  button: "#001F36",
+  border: "#001F36",
   inputPlaceholder: "#001F36",
-  containerBg: "#ffffff",
-  checkboxBg: "#ffffff",
+  containerBg: "#fbffcd",
+  checkboxBg: "#001F36",
   checkboxBorder: "#79ae92"
 };
 
@@ -163,16 +163,15 @@ export const GlobalStyles = createGlobalStyle`
   }
 
 
-  :where(.css-vryruh).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item .ant-dropdown-menu-item:hover{
+  .css-dev-only-do-not-override-vryruh.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item:hover{
     border-radius: 0;
     background-color: ${({ theme }) => theme.body};
   }
 
-  :where(.css-vryruh).ant-dropdown .ant-dropdown-menu, :where(.css-vryruh).ant-dropdown-menu-submenu .ant-dropdown-menu{
+  .css-dev-only-do-not-override-vryruh.ant-dropdown .ant-dropdown-menu{
     border-radius: 0;
     background-color: ${({ theme }) => theme.containerBg};
   }
-
 
   .container-sun {
     display: flex;
@@ -216,14 +215,14 @@ export const GlobalStyles = createGlobalStyle`
   .pop-up {
     display: flex;
     justify-content: end;
-    width: 700px;
   }
 
   .button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
+    gap: 6px;
+    width: 120px;
     height: 30px;
     border: none;
     border: 1px solid ${({ theme }) => theme.border};
@@ -237,7 +236,6 @@ export const GlobalStyles = createGlobalStyle`
 
   .modal {
     display: flex;
-    align-items: center;
     flex-direction: column;
     padding: 10px;
 
@@ -281,14 +279,14 @@ export const GlobalStyles = createGlobalStyle`
     justify-content: space-between;
     flex-direction: column;
     width: 700px;
-    padding: 10px 5px;
+    padding: 10px 0px;
     gap: 20px;
   }
 
   .container-add {
     display: flex;
     height: 40px;
-    border-bottom: ${({ theme }) => theme.body} solid 2px;
+    border-bottom: ${({ theme }) => theme.border} solid 2px;
 
     background-color: ${({ theme }) => theme.containerBg};
   }
@@ -331,16 +329,27 @@ export const GlobalStyles = createGlobalStyle`
     height: 100%;
   }
 
-  label {
+  
+.labelCheckbox	{
     display: flex;
-    align-items: center;
+    align-items: end;
+    justify-content: space-between;
   
     border-bottom: ${({ theme }) => theme.body} solid 2px;
+}
+
+  form label {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+  
+    border-bottom: ${({ theme }) => theme.border} solid 2px;
 
     font-family: "Rubik", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    width: 400px;
   }
 
   label input {
@@ -349,11 +358,6 @@ export const GlobalStyles = createGlobalStyle`
     justify-content: end;
 
   }
-  
-  label p{
-    width: 100%;
-  }
-
   .date {
     display: flex;
     align-items: center;
@@ -393,23 +397,30 @@ export const GlobalStyles = createGlobalStyle`
     border: none;
   }
   
+  .containerAddTask{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+  }
   
   .addTask {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 33%;
+    justify-content: center;
+    gap: 7px;
+    width: 90px;
     padding: 10px;
 
     background-color: ${({ theme }) => theme.body};
     
+    
     cursor: pointer;
+    border: solid 2px ${({ theme }) => theme.border};
   }
 
   .content-modal button {
     color: ${({ theme }) => theme.text};
-
-    border: none;
   }
 
   .alertButton{
@@ -453,10 +464,6 @@ export const GlobalStyles = createGlobalStyle`
       width: 100vw;
     }
 
-    .pop-up{
-      width: 90%;
-    }
-
     .modal{
       width: 90%;
     }
@@ -467,6 +474,13 @@ export const GlobalStyles = createGlobalStyle`
 
     .headerClose{
       width: 90%;
+    }
+  }
+  @media screen and (max-width: 476px){
+    form label{
+      width: 100%;
+      align-items: start;
+      flex-direction: column;
     }
   }
 `;
