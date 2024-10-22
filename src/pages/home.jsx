@@ -182,7 +182,41 @@ const Home = () => {
                             )}
                         </Popup>
                     </div>
+                    <div className="pop-up">
+                        <Popup
+                            trigger={<button className="button"><IoAddSharp />Adicionar Task</button>}
+                            modal
+                            nested
+                        >
+                            {close => (
+                                <div className="modal">
+                                    <div className="headerClose">
+                                        <button className="close" onClick={close}>
+                                            &times;
+                                        </button>
+                                    </div>
+                                    <div className="header">Create tasks</div>
+                                    <div className="content-modal">
+                                        <div className="container-add">
+                                            <input value={input} onChange={handleChange} placeholder='Create Task...' type="text" />
+                                        </div>
+
+                                        <form action="">
+                                            <label htmlFor="">
+                                                <p>Data de conclusão</p>
+                                                <DesktopDatePicker inputDate={inputDate} setInputDate={setInputDate} />
+                                            </label>
+                                        </form>
+                                        <div className="containerAddTask">
+                                            <button onClick={addTask} className='addTask'><VscDiffAdded fontSize={20}/>Create</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                        </Popup>
+                    </div>
                     <div className="container-search">
+
 
                         <input value={search} onChange={onChangeValue} type="text" placeholder='Search Task...' />
                         <BiSearchAlt className='search' />
@@ -231,6 +265,7 @@ const Home = () => {
             </div>
 
             {/* Popup */}
+
 
 
             {confirm && (

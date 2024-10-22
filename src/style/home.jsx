@@ -2,10 +2,15 @@ import { createGlobalStyle } from "styled-components";
 
 export const lightTheme = {
   body: "#ffffff",
+  body: "#ffffff",
   text: "#001F36",
   button: "#001F36",
   border: "#001F36",
+  button: "#001F36",
+  border: "#001F36",
   inputPlaceholder: "#001F36",
+  containerBg: "#fbffcd",
+  checkboxBg: "#001F36",
   containerBg: "#fbffcd",
   checkboxBg: "#001F36",
   checkboxBorder: "#79ae92"
@@ -166,10 +171,12 @@ export const GlobalStyles = createGlobalStyle`
 
 
   .css-dev-only-do-not-override-vryruh.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item:hover{
+  .css-dev-only-do-not-override-vryruh.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item:hover{
     border-radius: 0;
     background-color: ${({ theme }) => theme.body};
   }
 
+  .css-dev-only-do-not-override-vryruh.ant-dropdown .ant-dropdown-menu{
   .css-dev-only-do-not-override-vryruh.ant-dropdown .ant-dropdown-menu{
     border-radius: 0;
     background-color: ${({ theme }) => theme.containerBg};
@@ -282,12 +289,14 @@ export const GlobalStyles = createGlobalStyle`
     flex-direction: column;
     width: 700px;
     padding: 10px 0px;
+    padding: 10px 0px;
     gap: 20px;
   }
 
   .container-add {
     display: flex;
     height: 40px;
+    border-bottom: ${({ theme }) => theme.border} solid 2px;
     border-bottom: ${({ theme }) => theme.border} solid 2px;
 
     background-color: ${({ theme }) => theme.containerBg};
@@ -333,11 +342,23 @@ export const GlobalStyles = createGlobalStyle`
 
   
 .labelCheckbox	{
+  
+.labelCheckbox	{
     display: flex;
+    align-items: end;
+    justify-content: space-between;
     align-items: end;
     justify-content: space-between;
   
     border-bottom: ${({ theme }) => theme.body} solid 2px;
+}
+
+  form label {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+  
+    border-bottom: ${({ theme }) => theme.border} solid 2px;
 }
 
   form label {
@@ -351,6 +372,7 @@ export const GlobalStyles = createGlobalStyle`
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    width: 400px;
     width: 400px;
   }
 
@@ -405,10 +427,19 @@ export const GlobalStyles = createGlobalStyle`
     justify-content: end;
     width: 100%;
   }
+  .containerAddTask{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+  }
   
   .addTask {
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: 90px;
     justify-content: center;
     gap: 7px;
     width: 90px;
@@ -420,6 +451,7 @@ export const GlobalStyles = createGlobalStyle`
     
     border: solid 2px ${({ theme }) => theme.border};
     cursor: pointer;
+    border: solid 2px ${({ theme }) => theme.border};
     border: solid 2px ${({ theme }) => theme.border};
   }
 
@@ -480,6 +512,14 @@ export const GlobalStyles = createGlobalStyle`
       width: 90%;
     }
   }
+  @media screen and (max-width: 476px){
+    form label{
+      width: 100%;
+      align-items: start;
+      flex-direction: column;
+    }
+  }
+`;
   @media screen and (max-width: 476px){
     form label{
       width: 100%;
