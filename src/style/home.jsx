@@ -263,7 +263,6 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 20px;
     position: absolute;
     top: -22px;
-    right: -12px;
     border: 1px solid ${({ theme }) => theme.border};
     color: ${({ theme }) => theme.text};
     background: ${({ theme }) => theme.body};
@@ -437,6 +436,15 @@ export const GlobalStyles = createGlobalStyle`
 
   /* Media Queries */
   @media screen and (max-width: 775px) {
+    .button{
+      width: 80px;
+      font-size: 9px;
+      gap: 3px;
+    }
+
+    .headerClose > .close{
+      right: -43px;
+    }
     .container {
       width: 100%;
     }
@@ -444,7 +452,8 @@ export const GlobalStyles = createGlobalStyle`
       width: 90%;
     }
     .modal {
-      width: 90%;
+
+      width: 100%;
     }
     .content-modal {
       width: 100%;
@@ -455,6 +464,10 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   @media screen and (max-width: 476px) {
+    .headerClose > .close{
+      right: -29px;
+    }
+
     form label {
       width: 100%;
       align-items: start;
