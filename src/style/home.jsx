@@ -1,16 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 
+// Temas
 export const lightTheme = {
-  body: "#ffffff",
   body: "#ffffff",
   text: "#001F36",
   button: "#001F36",
   border: "#001F36",
-  button: "#001F36",
-  border: "#001F36",
   inputPlaceholder: "#001F36",
-  containerBg: "#fbffcd",
-  checkboxBg: "#001F36",
   containerBg: "#fbffcd",
   checkboxBg: "#001F36",
   checkboxBorder: "#79ae92"
@@ -27,36 +23,36 @@ export const darkTheme = {
   checkboxBorder: "#79ae92"
 };
 
+// Estilos Globais
 export const GlobalStyles = createGlobalStyle`
-
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Jersey+10&family=Jersey+25&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Jersey+10&family=Jersey+25&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
-  html,
-  body {
+  /* Estilos Base */
+  html, body {
     color: ${({ theme }) => theme.text};
     background: ${({ theme }) => theme.body};
-
     transition: all 0.4s ease;
   }
+
+  /* Estilos de Botão do Cabeçalho */
   header button {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 34px;
     height: 30px;
-
     color: ${({ theme }) => theme.text};
     background-color: ${({ theme }) => theme.containerBg};
-
     cursor: pointer;
     transition: all 0.4s ease;
-  }
-  header button:hover{
-    border: 1px solid ${({ theme }) => theme.border};
-    transition: all 0.4s ease;
+
+    &:hover {
+      border: 1px solid ${({ theme }) => theme.border};
+    }
   }
 
+  /* Layout Principal */
   .main {
     width: 100vw;
     height: 100vh;
@@ -64,27 +60,28 @@ export const GlobalStyles = createGlobalStyle`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
     gap: 80px;
   }
 
+  /* Estilos de Parágrafo */
   p {
     color: ${({ theme }) => theme.text};
   }
 
-  .css-3lhuho-MuiPaper-root-MuiAlert-root{
+  /* Estilos de Alertas */
+  .css-3lhuho-MuiPaper-root-MuiAlert-root {
     justify-content: center;
     align-items: center;
     background-color: #ffff00;
   }
 
-  .css-zioonp-MuiAlert-message{
+  .css-zioonp-MuiAlert-message {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-
+  /* Estilos do Container Superior */
   .top {
     display: flex;
     align-items: center;
@@ -94,23 +91,24 @@ export const GlobalStyles = createGlobalStyle`
     width: 90%;
   }
 
+  /* Estilos do Container */
   .container {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 700px;
     gap: 10px;
-    
   }
 
+  /* Estilos do Título */
   .Title {
     font-family: "Jersey 25", sans-serif;
     font-weight: 400;
-    font-style: normal;
     color: ${({ theme }) => theme.text};
     font-size: 34px;
   }
 
+  /* Estilos da Barra de Pesquisa */
   .container-search {
     display: flex;
     align-items: center;
@@ -123,14 +121,13 @@ export const GlobalStyles = createGlobalStyle`
     height: 30px;
     border: none;
     outline: none;
-
     color: ${({ theme }) => theme.text};
     background: transparent;
-  }
 
-  ::-webkit-input-placeholder {
-    font-size: 20px;
-    color: ${({ theme }) => theme.inputPlaceholder};
+    &::placeholder {
+      font-size: 20px;
+      color: ${({ theme }) => theme.inputPlaceholder};
+    }
   }
 
   .search {
@@ -138,6 +135,7 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 15px;
   }
 
+  /* Estilos das Opções */
   .container-options {
     display: flex;
     justify-content: center;
@@ -148,50 +146,43 @@ export const GlobalStyles = createGlobalStyle`
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: ${({ theme }) => theme.text};
     background-color: ${({ theme }) => theme.containerBg};
-
+    border: solid 2px ${({ theme }) => theme.border};
     cursor: pointer;
     user-select: none;
-
     font-family: "Rubik", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
     padding: 0 6px;
   }
 
-  .buttonDropdown{
+  .buttonDropdown {
     border: none;
     outline: none;
     background: transparent;
     color: ${({ theme }) => theme.text};
   }
 
-
-  .css-dev-only-do-not-override-vryruh.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item:hover{
-  .css-dev-only-do-not-override-vryruh.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item:hover{
-    border-radius: 0;
-    background-color: ${({ theme }) => theme.body};
-  }
-
-  .css-dev-only-do-not-override-vryruh.ant-dropdown .ant-dropdown-menu{
-  .css-dev-only-do-not-override-vryruh.ant-dropdown .ant-dropdown-menu{
+  /* Estilos do Dropdown */
+  .css-dev-only-do-not-override-vryruh.ant-dropdown .ant-dropdown-menu {
     border-radius: 0;
     background-color: ${({ theme }) => theme.containerBg};
   }
 
+  .css-dev-only-do-not-override-vryruh.ant-dropdown .ant-dropdown-menu-item:hover {
+    border-radius: 0;
+    background-color: ${({ theme }) => theme.body};
+  }
+
+  /* Estilos do Sol */
   .container-sun {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 34px;
     height: 30px;
-
     color: #ffff00;
     background-color: ${({ theme }) => theme.containerBg};
-
+    border: solid 2px ${({ theme }) => theme.border};
     cursor: pointer;
   }
 
@@ -199,6 +190,7 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 20px;
   }
 
+  /* Estilos de Conteúdo */
   .content {
     display: flex;
     flex-direction: column;
@@ -208,24 +200,27 @@ export const GlobalStyles = createGlobalStyle`
     max-height: 70vh; 
     overflow-y: auto;
 
-    &&::-webkit-scrollbar {
+    &::-webkit-scrollbar {
       width: 12px;            
     }
-    &&::-webkit-scrollbar-track {
+
+    &::-webkit-scrollbar-track {
       background: ${({ theme }) => theme.containerBg};  
     }
 
-    &&::-webkit-scrollbar-thumb {
+    &::-webkit-scrollbar-thumb {
       background-color: ${({ theme }) => theme.body};    
       border: 3px solid ${({ theme }) => theme.containerBg};  
     }
   }
 
+  /* Estilos do Pop-up */
   .pop-up {
     display: flex;
     justify-content: end;
   }
 
+  /* Estilos do Botão */
   .button {
     display: flex;
     align-items: center;
@@ -235,36 +230,32 @@ export const GlobalStyles = createGlobalStyle`
     height: 30px;
     border: none;
     border: 1px solid ${({ theme }) => theme.border};
-
     color: ${({ theme }) => theme.text};
     background-color: ${({ theme }) => theme.containerBg};
-
     cursor: pointer;
     transition: all 0.4s ease;
   }
 
+  /* Estilos do Modal */
   .modal {
     display: flex;
     flex-direction: column;
     padding: 10px;
-
     background-color: ${({ theme }) => theme.containerBg};
   }
-  
+
   .header {
     color: ${({ theme }) => theme.text};
     font-family: "Rubik", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 400;
-    font-style: normal;
   }
-  .headerClose{
+
+  .headerClose {
     display: flex;
     justify-content: end;
     width: 100%;
     position: absolute;
   }
-
 
   .headerClose > .close {
     display: block;
@@ -274,11 +265,8 @@ export const GlobalStyles = createGlobalStyle`
     top: -22px;
     right: -12px;
     border: 1px solid ${({ theme }) => theme.border};
-
     color: ${({ theme }) => theme.text};
     background: ${({ theme }) => theme.body};
-    
-    
     font-size: 24px;
     cursor: pointer;
   }
@@ -288,40 +276,36 @@ export const GlobalStyles = createGlobalStyle`
     justify-content: space-between;
     flex-direction: column;
     width: 700px;
-    padding: 10px 0px;
-    padding: 10px 0px;
+    padding: 10px 0;
     gap: 20px;
   }
 
+  /* Estilos do Container para Adicionar */
   .container-add {
     display: flex;
     height: 40px;
-    border-bottom: ${({ theme }) => theme.border} solid 2px;
-    border-bottom: ${({ theme }) => theme.border} solid 2px;
-
+    border-bottom: solid 2px ${({ theme }) => theme.border};
     background-color: ${({ theme }) => theme.containerBg};
   }
 
   .container-add input {
     height: 100%;
- 
     color: ${({ theme }) => theme.text};
   }
 
+  /* Estilos dos Itens do Container */
   .container-itens {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    border-bottom: ${({ theme }) => theme.border} solid 3px;
-
+    border-bottom: solid 3px ${({ theme }) => theme.border};
     color: ${({ theme }) => theme.text};
-
     font-size: 20px;
     font-family: "Rubik", sans-serif;
-    font-optical-sizing: auto;
   }
 
+  /* Estilos da Caixa de Seleção */
   .checkbox {
     display: flex;
     align-items: center;
@@ -332,7 +316,6 @@ export const GlobalStyles = createGlobalStyle`
   .checkbox input {
     outline: none;
     background: ${({ theme }) => theme.checkboxBg};
-
     cursor: pointer;
   }
 
@@ -340,39 +323,21 @@ export const GlobalStyles = createGlobalStyle`
     height: 100%;
   }
 
-  
-.labelCheckbox	{
-  
-.labelCheckbox	{
+  .labelCheckbox {
     display: flex;
     align-items: end;
     justify-content: space-between;
-    align-items: end;
-    justify-content: space-between;
-  
-    border-bottom: ${({ theme }) => theme.body} solid 2px;
-}
+    border-bottom: solid 2px ${({ theme }) => theme.body};
+  }
 
+  /* Estilos do Formulário */
   form label {
     display: flex;
     align-items: end;
     justify-content: space-between;
-  
-    border-bottom: ${({ theme }) => theme.border} solid 2px;
-}
-
-  form label {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-  
-    border-bottom: ${({ theme }) => theme.border} solid 2px;
-
+    border-bottom: solid 2px ${({ theme }) => theme.border};
     font-family: "Rubik", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 400;
-    font-style: normal;
-    width: 400px;
     width: 400px;
   }
 
@@ -380,8 +345,9 @@ export const GlobalStyles = createGlobalStyle`
     display: flex;
     align-items: center;
     justify-content: end;
-
   }
+
+  /* Estilos de Data */
   .date {
     display: flex;
     align-items: center;
@@ -392,12 +358,11 @@ export const GlobalStyles = createGlobalStyle`
     border: none;
     outline: none;
     cursor: pointer;
-
     color: red;
     background: transparent;
   }
 
-  .date svg{
+  .date svg {
     font-size: 25px;
   }
 
@@ -406,7 +371,7 @@ export const GlobalStyles = createGlobalStyle`
     height: 30px;
   }
   
-  .css-1dune0f-MuiInputBase-input-MuiOutlinedInput-input{
+  .css-1dune0f-MuiInputBase-input-MuiOutlinedInput-input {
     outline: none;
     border: none;
   }
@@ -421,13 +386,8 @@ export const GlobalStyles = createGlobalStyle`
     border: none;
   }
   
-  .containerAddTask{
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    width: 100%;
-  }
-  .containerAddTask{
+  /* Estilos para Adicionar Tarefa */
+  .containerAddTask {
     display: flex;
     align-items: center;
     justify-content: end;
@@ -440,88 +400,62 @@ export const GlobalStyles = createGlobalStyle`
     justify-content: center;
     gap: 7px;
     width: 90px;
-    justify-content: center;
-    gap: 7px;
-    width: 90px;
     padding: 10px;
-
     background-color: ${({ theme }) => theme.body};
-    
-    
-    
     border: solid 2px ${({ theme }) => theme.border};
     cursor: pointer;
-    border: solid 2px ${({ theme }) => theme.border};
-    border: solid 2px ${({ theme }) => theme.border};
   }
 
   .content-modal button {
     color: ${({ theme }) => theme.text};
   }
 
-  .alertButton{
+  /* Estilos do Botão de Alerta */
+  .alertButton {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
   }
 
-
   .css-1gl5z62-MuiPaper-root-MuiAlert-root {
     width: 450px;
   }
+
   .css-zioonp-MuiAlert-message {
     width: 100%;
   }
 
-  .alertButton button{
+  .alertButton button {
     border: none;
     background: transparent;
     color: ${({ theme }) => theme.text};
     background-color: ${({ theme }) => theme.containerBg};
-
     padding: 4px 10px;
-
     cursor: pointer;
   }
 
-  @media screen and (max-width: 775px){
-    .container{
+  /* Media Queries */
+  @media screen and (max-width: 775px) {
+    .container {
       width: 100%;
     }
-    .content{
+    .content {
       width: 90%;
     }
-
-    .popup-content{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100vw;
-    }
-
-    .modal{
+    .modal {
       width: 90%;
     }
-
-    .content-modal{
-      width: 100% ;
+    .content-modal {
+      width: 100%;
     }
-
-    .headerClose{
+    .headerClose {
       width: 90%;
     }
   }
-  @media screen and (max-width: 476px){
-    form label{
-      width: 100%;
-      align-items: start;
-      flex-direction: column;
-    }
-  }
-`;
-  @media screen and (max-width: 476px){
-    form label{
+
+  @media screen and (max-width: 476px) {
+    form label {
       width: 100%;
       align-items: start;
       flex-direction: column;
