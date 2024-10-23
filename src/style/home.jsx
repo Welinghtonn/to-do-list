@@ -163,7 +163,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   /* Estilos do Dropdown */
-  :where(.css-dev-only-do-not-override-vryruh).ant-dropdown .ant-dropdown-menu{
+  :where(.css-vryruh).ant-dropdown .ant-dropdown-menu{
     border-radius: 0;
     background-color: ${({ theme }) => theme.containerBg};
   }
